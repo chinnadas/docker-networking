@@ -1,0 +1,55 @@
+Docker Networking
+================
+	bridge network is basically used for containers to communicate with in a host on a single machaine.
+
+docker network ls
+
+NETWORK ID	NAME 		DRIVER		SCOPE
+6254875625	bridge		bridge		local
+4256854686	host		host		local
+8547636584	null		null		local
+
+# docker run -itd --name conatiner1 jenkins:altest
+# docker run -itd --name container2 jenkins:latest
+
+# docker network inspect <bridge network id>
+
+
+# docker exec -it conatiner1 /bin/bash
+# ping 172.21.0.3(container2 ip)
+
+
+# docker exec -it conatiner2 /bin/bash
+# ping 172.21.0.2(container1 ip)
+
+
+custem bridge network:
+======================
+# docker netwrok ls
+
+# docker network create --driver bridge mynetwork 
+
+# docker network inspect mynetwork
+
+# docker run -itd --name conatiner1 jenkins:altest
+# docker run -itd --name container2 jenkins:latest
+
+# docker network inspect <bridge network id>
+
+
+# docker exec -it conatiner1 /bin/bash
+# ping 172.21.0.3(container2 ip)
+
+
+# docker exec -it conatiner2 /bin/bash
+# ping 172.21.0.2(container1 ip)
+
+
+
+
+
+
+
+
+
+
