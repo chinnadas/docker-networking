@@ -44,19 +44,16 @@ custem bridge network:
 # docker exec -it conatiner2 /bin/bash
 # ping 172.21.0.2(container1 ip)
 
+
+disconnect container from network:
+==================================
+
 # docker network ls
 # docker network disconnect mynetwork container1
 # docker network inspect mynetwork
 
-
-
-
-
-
-
-
-
-
-
+network remove:
+===============
+# docker network rm my-network
 
 
